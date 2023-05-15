@@ -8,12 +8,12 @@
             "FormsExamplePiece"
         ],
         "secrets": [
-            "string_secret",
-            "float_secret",
             "boolean_secret",
-            "int_secret",
-            "enum_secret"
+            "float_secret",
+            "string_secret",
+            "enum_secret",
+            "int_secret"
         ],
-        "source_image": "ghcr.io/enter-your-registry-name-here/enter-your-repository-name-here:0.1.0-group0"
+        "source_image": "ghcr.io/enter-your-registry-name-here/enter-your-repository-name-here:0.1.1-group0"
     }
 }

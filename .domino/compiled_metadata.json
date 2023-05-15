@@ -37,6 +37,7 @@
             "properties": {
                 "enum_value": {
                     "description": "Example of enum input",
+                    "default": "value_1",
                     "allOf": [
                         {
                             "$ref": "#/definitions/EnumType"
@@ -46,31 +47,28 @@
                 "float_value": {
                     "title": "Float Value",
                     "description": "Example of float input",
+                    "default": 1.3,
                     "type": "number"
                 },
                 "int_value": {
                     "title": "Int Value",
                     "description": "Example of int input",
+                    "default": 2,
                     "type": "integer"
                 },
                 "string_value": {
                     "title": "String Value",
                     "description": "Example of string input",
+                    "default": "text value",
                     "type": "string"
                 },
                 "boolean_value": {
                     "title": "Boolean Value",
                     "description": "Example of boolean input",
+                    "default": true,
                     "type": "boolean"
                 }
             },
-            "required": [
-                "enum_value",
-                "float_value",
-                "int_value",
-                "string_value",
-                "boolean_value"
-            ],
             "definitions": {
                 "EnumType": {
                     "title": "EnumType",
