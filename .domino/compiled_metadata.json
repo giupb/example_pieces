@@ -1,6 +1,6 @@
 {
-    "ExampleSimplePiece": {
-        "name": "ExampleSimplePiece",
+    "FormsExamplePiece": {
+        "name": "FormsExamplePiece",
         "dependency": {
             "dockerfile": null,
             "requirements_file": "requirements_0.txt"
@@ -9,7 +9,7 @@
             "Example"
         ],
         "style": {
-            "node_label": "Simple Piece",
+            "node_label": "Forms Example Piece",
             "node_type": "default",
             "node_style": {
                 "backgroundColor": "#ebebeb"
@@ -35,38 +35,49 @@
             "title": "InputModel",
             "type": "object",
             "properties": {
-                "distribution_name": {
-                    "description": "Name of the distribution to sample from",
+                "enum_value": {
+                    "description": "Example of enum input",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/DistributionType"
+                            "$ref": "#/definitions/EnumType"
                         }
                     ]
                 },
-                "distribution_mean": {
-                    "title": "Distribution Mean",
-                    "description": "Distribution mean",
+                "float_value": {
+                    "title": "Float Value",
+                    "description": "Example of float input",
                     "type": "number"
                 },
-                "distribution_sd": {
-                    "title": "Distribution Sd",
-                    "description": "Distribution standard deviation",
-                    "default": 1.0,
-                    "exclusiveMinimum": 0.0,
-                    "type": "number"
+                "int_value": {
+                    "title": "Int Value",
+                    "description": "Example of int input",
+                    "type": "integer"
+                },
+                "string_value": {
+                    "title": "String Value",
+                    "description": "Example of string input",
+                    "type": "string"
+                },
+                "boolean_value": {
+                    "title": "Boolean Value",
+                    "description": "Example of boolean input",
+                    "type": "boolean"
                 }
             },
             "required": [
-                "distribution_name",
-                "distribution_mean"
+                "enum_value",
+                "float_value",
+                "int_value",
+                "string_value",
+                "boolean_value"
             ],
             "definitions": {
-                "DistributionType": {
-                    "title": "DistributionType",
+                "EnumType": {
+                    "title": "EnumType",
                     "description": "An enumeration.",
                     "enum": [
-                        "gaussian",
-                        "poisson"
+                        "value_1",
+                        "value_2"
                     ],
                     "type": "string"
                 }
@@ -76,35 +87,106 @@
             "title": "OutputModel",
             "type": "object",
             "properties": {
-                "message": {
-                    "title": "Message",
-                    "description": "Output message to log",
+                "enum_output": {
+                    "description": "Example of enum output",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/EnumType"
+                        }
+                    ]
+                },
+                "float_output": {
+                    "title": "Float Output",
+                    "description": "Example of float output",
+                    "type": "number"
+                },
+                "int_output": {
+                    "title": "Int Output",
+                    "description": "Example of int output",
+                    "type": "integer"
+                },
+                "string_output": {
+                    "title": "String Output",
+                    "description": "Example of string output",
                     "type": "string"
                 },
-                "sample_result": {
-                    "title": "Sample Result",
-                    "description": "The result of this Piece's processing",
-                    "type": "string"
+                "boolean_output": {
+                    "title": "Boolean Output",
+                    "description": "Example of boolean output",
+                    "type": "boolean"
                 }
             },
             "required": [
-                "message",
-                "sample_result"
-            ]
+                "enum_output",
+                "float_output",
+                "int_output",
+                "string_output",
+                "boolean_output"
+            ],
+            "definitions": {
+                "EnumType": {
+                    "title": "EnumType",
+                    "description": "An enumeration.",
+                    "enum": [
+                        "value_1",
+                        "value_2"
+                    ],
+                    "type": "string"
+                }
+            }
         },
         "secrets_schema": {
             "title": "SecretsModel",
             "type": "object",
             "properties": {
-                "EXAMPLE_OPERATOR_SECRET_1": {
-                    "title": "Example Operator Secret 1",
-                    "description": "A secret necessary to run this Piece",
+                "enum_secret": {
+                    "description": "Example of enum secret",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/EnumType"
+                        }
+                    ]
+                },
+                "float_secret": {
+                    "title": "Float Secret",
+                    "description": "Example of float secret",
+                    "type": "number"
+                },
+                "int_secret": {
+                    "title": "Int Secret",
+                    "description": "Example of int secret",
+                    "type": "integer"
+                },
+                "string_secret": {
+                    "title": "String Secret",
+                    "description": "Example of string secret",
                     "type": "string"
+                },
+                "boolean_secret": {
+                    "title": "Boolean Secret",
+                    "description": "Example of boolean secret",
+                    "type": "boolean"
                 }
             },
             "required": [
-                "EXAMPLE_OPERATOR_SECRET_1"
-            ]
-        }
+                "enum_secret",
+                "float_secret",
+                "int_secret",
+                "string_secret",
+                "boolean_secret"
+            ],
+            "definitions": {
+                "EnumType": {
+                    "title": "EnumType",
+                    "description": "An enumeration.",
+                    "enum": [
+                        "value_1",
+                        "value_2"
+                    ],
+                    "type": "string"
+                }
+            }
+        },
+        "source_url": "https://github.com/giupb/example_pieces/tree/main/pieces/FormsExamplePiece"
     }
 }
