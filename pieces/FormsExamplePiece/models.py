@@ -9,18 +9,23 @@ class EnumType(str, Enum):
 
 class InputModel(BaseModel):
     enum_value: EnumType = Field(
+        default=EnumType.key_1,
         description="Example of enum input"
     )
     float_value: float = Field(
+        default=1.3,
         description="Example of float input"
     )
     int_value: int = Field(
+        default=2,
         description="Example of int input"
     )
     string_value: str = Field(
+        default="text value",
         description="Example of string input"
     )
     boolean_value: bool = Field(
+        default=True,
         description="Example of boolean input"
     )
 
