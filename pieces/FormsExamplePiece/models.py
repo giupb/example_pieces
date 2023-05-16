@@ -8,10 +8,6 @@ class EnumType(str, Enum):
 
 
 class InputModel(BaseModel):
-    enum_value: EnumType = Field(
-        default=EnumType.key_1,
-        description="Example of enum input"
-    )
     float_value: float = Field(
         default=1.3,
         description="Example of float input"
@@ -27,6 +23,10 @@ class InputModel(BaseModel):
     boolean_value: bool = Field(
         default=True,
         description="Example of boolean input"
+    )
+    enum_value: EnumType = Field(
+        default=EnumType.key_1,
+        description="Example of enum input"
     )
 
 
