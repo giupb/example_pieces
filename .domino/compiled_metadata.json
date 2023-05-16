@@ -35,15 +35,6 @@
             "title": "InputModel",
             "type": "object",
             "properties": {
-                "enum_value": {
-                    "description": "Example of enum input",
-                    "default": "value_1",
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/EnumType"
-                        }
-                    ]
-                },
                 "float_value": {
                     "title": "Float Value",
                     "description": "Example of float input",
@@ -67,6 +58,15 @@
                     "description": "Example of boolean input",
                     "default": true,
                     "type": "boolean"
+                },
+                "enum_value": {
+                    "description": "Example of enum input",
+                    "default": "value_1",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/EnumType"
+                        }
+                    ]
                 }
             },
             "definitions": {
